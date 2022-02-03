@@ -1,4 +1,4 @@
-#шаг5 урок 2.4
+#шаг 5 урок 2.4
 num = int(input())
 print(num + 0) 
 print(num + 1) 
