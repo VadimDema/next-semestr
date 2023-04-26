@@ -1,0 +1,91 @@
+namespace Session2Testss
+{
+    [TestClass]
+    public class UnitTest1
+    {
+        static Analytics AnalyticsClass = null;
+
+        [ClassInitialize]
+        static public void Init(TestContext tc)
+        {
+            AnalyticsClass = new Analytics();
+        }
+
+
+        [TestMethod]
+        public void PopularMonths()
+        {
+            List<DateTime> dates = new List<DateTime>(){
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 12, 15),
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 10, 1) };
+            dates = AnalyticsClass.PopularMonths(dates);
+
+            Assert.AreEqual(dates.Count, 3);
+
+            Assert.AreEqual(dates[0], new DateTime(2020, 12, 1));
+        }
+
+        [TestMethod]
+        public void NoPopularMonths()
+        {
+            List<DateTime> dates = new List<DateTime>(){
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 12, 15),
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 10, 1) };
+            dates = AnalyticsClass.PopularMonths(dates);
+
+            Assert.AreEqual(dates.Count, 3);
+
+            Assert.AreEqual(dates[0], new DateTime(2020, 12, 1));
+        }
+
+        [TestMethod]
+        public void MostPopularMonths()
+        {
+            List<DateTime> dates = new List<DateTime>(){
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 12, 15),
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 10, 1) };
+            dates = AnalyticsClass.PopularMonths(dates);
+
+            Assert.AreEqual(dates.Count, 3);
+
+            Assert.AreEqual(dates[0], new DateTime(2020, 12, 1));
+        }
+
+        [TestMethod]
+        public void PopularMonthsInDecade()
+        {
+            List<DateTime> dates = new List<DateTime>(){
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 12, 15),
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 10, 1) };
+            dates = AnalyticsClass.PopularMonths(dates);
+
+            Assert.AreEqual(dates.Count, 3);
+
+            Assert.AreEqual(dates[0], new DateTime(2020, 12, 1));
+        }
+
+        [TestMethod]
+        public void PopularMonthsinYear()
+        {
+            List<DateTime> dates = new List<DateTime>(){
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 12, 15),
+                new DateTime(2020, 12, 17),
+                new DateTime(2020, 10, 1) };
+            dates = AnalyticsClass.PopularMonths(dates);
+
+            Assert.AreEqual(dates.Count, 3);
+
+            Assert.AreEqual(dates[0], new DateTime(2020, 12, 1));
+        }
+    }
+
+    }
